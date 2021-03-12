@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'cal-modal',
+    loadChildren: () => import('./pages/cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
+  },
+  {
+    path: 'event',
+    loadChildren: () => import('./event/event.module').then( m => m.EventPageModule)
+  },
+  {
+    path: 'edit-modal',
+    loadChildren: () => import('./edit-modal/edit-modal.module').then( m => m.EditModalPageModule)
+  },
 ];
 
 @NgModule({

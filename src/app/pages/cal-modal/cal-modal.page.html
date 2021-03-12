@@ -1,0 +1,44 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-button (click)="close()">
+      <ion-icon name="close" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>{{ viewTitle }}</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="save()">
+      <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">เพิ่มชื่อ</ion-label>
+    <ion-input tpye="text" [(ngModel)]="event.title" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">เพิ่มคําอธิบาย</ion-label>
+    <ion-input tpye="text" [(ngModel)]="event.desc" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">รูปภาพ</ion-label>
+    <ion-input tpye="file" [(ngModel)]="event.image" placeholder="URL" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">เริ่ม</ion-label>
+    <!-- <ion-input tpye="file" [(ngModel)]="event.startTime"  displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D HH:mm"></ion-input> -->
+    <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">จบ</ion-label>
+    <!-- <ion-input tpye="file" [(ngModel)]="event.endTime"  displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D HH:mm"></ion-input> -->
+    <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">ทั้งวัน</ion-label>
+    <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+  </ion-item>
+
+</ion-content>
